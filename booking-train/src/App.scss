@@ -1,0 +1,220 @@
+$raisinBlack: #1d1d2d;
+$lavenderGray: #c4c3cc;
+$mediumSlateBlue: #736bf3;
+$sonicSilver: #6f6e7c;
+$romanSilver: #8c8c9a;
+$independence: #545461;
+$lightDark: #252336;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('http://fonts.cdnfonts.com/css/gotham?styles=17588');
+@mixin flexColumn {
+  display:flex;
+  flex-direction: column;
+}
+.App {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-family: 'Gotham', sans-serif;
+  margin:0;
+}
+
+h1{
+  font-size: 28px;
+}
+
+h2{
+  font-size: 16px;
+}
+
+label{
+  font-size: 12px;
+}
+
+p{
+  font-size: 8px;
+  margin:0;
+}
+
+article {
+  width: 40vw;
+  
+}
+
+.TrainWrapper {
+  height: 100vh; //removeToSeeRendered Values
+  display:flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap:wrap;
+  flex-basis:100%;
+  header {
+    align-self:flex-start;
+    background-color: #CECECE;
+    width: 100vw;
+    @include flexColumn;
+    align-items: center;
+    article {
+      @include flexColumn;
+      justify-content: center;
+      align-items: center;
+    
+    }
+    .tittle {
+      height: 10vh;
+      width: 100vw;
+    }  
+    .åka {
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      
+      .stockholm{
+        width: 50vw;
+        height: 7vh;
+        background-color: #E2E2E2;
+        article {
+          margin:1px;
+          width: 106.5px;
+          display:flex; 
+          flex-direction: row;
+          justify-content: flex-start;
+        }
+      }
+      .göteborg{
+        width: 50vw;
+        height: 7vh;
+        background-color: #ECECEC;
+        article {
+          width: 96.5px;
+          display:flex; 
+          flex-direction: row;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+  
+  form{
+    @include flexColumn;
+  }
+}
+
+.format-options {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  justify-content: space-between;
+  
+  .option-group {
+    display: flex;
+    margin: 8px 0px;   
+    input {
+      display: none;
+      &:checked {
+        + {
+          label {
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              left: 3px;
+              border: 6px solid black;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 50%;
+        padding: 8px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+
+.inputBig {
+  width: 90vw;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 13px;
+  margin-bottom: 13px;
+}
+
+.select {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw;
+  select {
+    width: 40vw;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0px 13px;
+    height: 40px;
+    select option[disabled]:first-child { display: none; }
+  }
+}
+
+.checkBoxWrapper{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkBox {
+  position: relative;
+}
+
+.checkBox label {
+  background-color: #fff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  
+}
+
+
+.checkBox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkBox input[type="checkbox"]:checked + label {
+  background-color: rgb(164, 247, 126);
+  border-color: black;
+}
+
+
+
+
+.bokaButton {
+  align-self:flex-end;
+  font-size: 18px; 
+  margin-top: 20px;
+  width: 90vw;
+  border-radius: 4px;
+  padding: 9px 30px;
+  color:white; 
+  background-color:black;
+  margin-bottom: 16px;  
+}
+
